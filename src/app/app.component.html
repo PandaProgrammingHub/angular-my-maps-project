@@ -1,0 +1,37 @@
+<div class="main-div">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Search Near By Place</h3>
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="mapForm">
+      <div class="row form-group ">
+        <div class="col-md-6">
+          <input type="text" class="form-control" formControlName="search"  placeholder="searchplace...">
+        </div>
+      <div class="col-md-6">
+        <input type="text" formControlName="type" class="form-control"  placeholder="type">
+      </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-6">
+          <input type="text" class="form-control" formControlName="latitude"  placeholder="latitude">
+        </div>
+      <div class="col-md-6">
+        <input type="text" formControlName="longitude" class="form-control"  placeholder="longitude">
+      </div>
+    </div>
+
+      <div class="row form-group">
+        <div class="col-md-6">
+          <input type="submit" class="btn btn-primary" name="submit"  placeholder="Search">
+          <input type="reset" name="reset" class="btn btn-default"  placeholder="Reset">
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+<agm-map class="row" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">
+  <agm-marker (markerClick)="clickedMarker()" [latitude]="lat" [longitude]="lng" [markerDraggable]="draggable" (dragEnd)="markerDragEnd($event)"></agm-marker>
+</agm-map>
+</div>

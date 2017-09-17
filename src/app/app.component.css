@@ -1,0 +1,13 @@
+.main-div {
+  background-color: #fff;
+  position: relative;
+  left: 20%;
+  border: 2px solid #fff;
+  width: 55%;
+  transform: translate(10%,10%);
+  padding: 20px;
+}
+agm-map {
+  height: 300px;
+  width: 650px;
+}
